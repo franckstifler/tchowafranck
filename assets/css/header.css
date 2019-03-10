@@ -1,0 +1,47 @@
+nav {
+    background-color: rgb(0, 0, 0);
+    background: linear-gradient(150deg, rgb(139, 139, 139), #000000);
+    text-align: center;
+    padding: 70px 0;
+    color: white;
+}
+
+nav h1 {
+    font-weight: bold;
+    font-size: 4rem;
+}
+
+nav ul {
+    list-style-type: none;
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    padding: 0 10px;
+    font-size: 1.2rem;
+}
+
+nav li a {
+    position: relative;
+}
+
+nav li a::after {
+    content: " ";
+    display: inline-block;
+    width: 0;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    background-color: white;
+    transition: all .8s;
+}
+
+li a:hover::after {
+    width: 100%;
+    color: whitesmoke;
+}
+
+

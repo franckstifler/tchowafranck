@@ -1,0 +1,24 @@
+<main>
+  <article class="post">
+    <header>
+      <h2 class="title">
+        <a href="/soft-delte">Soft delete with Ecto 3 and Postgres</a>
+      </h2>
+    </header>
+    <div class="content">
+      One thing that folks sometimes want or need to do is to be able to “soft delete” records in a database. This means that instead of... »
+    </div>
+    <footer class="footer">
+    <div class="tags">
+        <a href="/tag/stifler">Elixir</a>
+        <a href="/tag/stifler">Vue.js</a>
+      </div>
+      <div class="infos">
+        <a href="/author/stifler">Stifler</a>
+        <span>22 FEB 2019</span>
+      </div>
+    </footer>
+
+  </article>
+
+</main>

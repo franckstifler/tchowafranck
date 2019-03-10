@@ -1,0 +1,43 @@
+.post {
+    margin: 2.2em 0;
+}
+
+.post .title {
+    color: #505050;
+}
+
+.post .title:hover {
+    color: #070d59;
+}
+
+.post .content {
+    /* margin-top: 10px; */
+    margin: 5px 0;
+    color: #696969;
+    font-size: .9em;
+}
+
+.post .footer {
+    font-size: .9em;
+    color: #505050;
+    /* justify-content: space-evenly; */
+}
+
+.post .infos {
+    font-weight: bold;
+}
+
+.post .infos span {
+    font-style: italic;
+    font-weight: normal;
+    font-size: .9em;
+    padding: 2px;
+}
+
+.post .tags a {
+    font-size: .8em;
+    padding: 2px 10px;
+    background: linear-gradient(157deg, rgb(139, 139, 139), #000000);
+    color: #fff;
+    border-radius: 10px;
+}
