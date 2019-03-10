@@ -11,7 +11,9 @@ defmodule Blog.Application do
       # Start the Ecto repository
       Blog.Repo,
       # Start the endpoint when the application starts
-      BlogWeb.Endpoint
+      BlogWeb.Endpoint,
+      # Starts the blog parser task
+      Blog.PostParser
       # Starts a worker by calling: Blog.Worker.start_link(arg)
       # {Blog.Worker, arg},
     ]

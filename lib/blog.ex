@@ -1,9 +1,44 @@
 defmodule Blog do
-  @moduledoc """
-  Blog keeps the contexts that define your domain
-  and business logic.
+  import Ecto.Query
 
-  Contexts are also responsible for managing your data, regardless
-  if it comes from the database, an external API or others.
-  """
+  alias Blog.{Post, Tag, Repo}
+
+  def get_posts() do
+    query =
+      from p in Post, where: [published: true], preload: [:tags], order_by: [desc: :inserted_at]
+
+    Repo.all(query)
+  end
+
+  def insert_post(params) do
+    Post
+    |> Repo.get_by(slug: params.slug)
+    |> Repo.preload([:tags])
+    |> case do
+      nil ->
+        %Post{}
+        |> Post.changeset(params)
+        |> Ecto.Changeset.put_assoc(:tags, parse_tags(Map.get(params, :tags, "")))
+        |> Repo.insert()
+
+      post ->
+        post
+        |> Post.changeset(params)
+        |> Ecto.Changeset.put_assoc(:tags, parse_tags(Map.get(params, :tags, "")))
+        |> Repo.update()
+    end
+  end
+
+  defp parse_tags(params) do
+    params
+    |> String.split(",", trim: true)
+    |> Enum.map(&String.downcase/1)
+    |> insert_and_get_all()
+  end
+
+  defp insert_and_get_all(names) do
+    maps = Enum.map(names, &%{name: &1})
+    Repo.insert_all(Tag, maps, on_conflict: :nothing)
+    Repo.all(from t in Tag, where: t.name in ^names)
+  end
 end
