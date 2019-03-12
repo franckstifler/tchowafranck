@@ -8,12 +8,13 @@ defmodule Blog.Post do
     field :slug, :string
     field :published_date, :naive_datetime
     field :published, :boolean
+    field :blurb, :string
 
     many_to_many(:tags, Blog.Tag, join_through: "posts_tags", on_replace: :delete)
     timestamps()
   end
 
-  @fields [:title, :slug, :content, :published_date, :published]
+  @fields [:title, :blurb, :slug, :content, :published_date, :published]
 
   def changeset(post, attrs) do
     post
