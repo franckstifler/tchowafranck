@@ -31,7 +31,9 @@ defmodule Blog do
 
   defp parse_tags(params) do
     params
-    |> String.split(",", trim: true)
+    |> String.split(",")
+    |> Enum.map(&String.trim/1)
+    |> Enum.reject(& &1 == "")
     |> Enum.map(&String.downcase/1)
     |> insert_and_get_all()
   end

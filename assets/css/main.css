@@ -1,43 +1,36 @@
-.post {
-    margin: 2.2em 0;
+.post-listing {
+    margin: 1.5em 0;
+    padding-bottom: 40px;
+    border-bottom: solid rgb(209, 209, 209) 1px;
 }
 
-.post .title {
-    color: #505050;
+.post-listing__title:hover {
+    color: #3F51B5;
 }
 
-.post .title:hover {
-    color: #070d59;
+.post-listing small {
+    font-style: oblique;
+    font-size: .75em;
+    color: #3d3d3d;
 }
 
-.post .content {
+.post-listing__content {
     /* margin-top: 10px; */
     margin: 5px 0;
-    color: #696969;
-    font-size: .9em;
-}
-
-.post .footer {
-    font-size: .9em;
-    color: #505050;
-    /* justify-content: space-evenly; */
-}
-
-.post .infos {
-    font-weight: bold;
-}
-
-.post .infos span {
-    font-style: italic;
-    font-weight: normal;
-    font-size: .9em;
-    padding: 2px;
-}
-
-.post .tags a {
+    color: #1a1a1a;
     font-size: .8em;
+}
+
+.post-listing__footer {
+    font-size: .8em;
+    margin-top: 10px;
+}
+
+.post-listing .tags a {
     padding: 2px 10px;
-    background: linear-gradient(157deg, rgb(139, 139, 139), #000000);
+    margin-right: 5px;
+    /* background-color: #3F51B5; */
+    background: linear-gradient(157deg, rgb(106, 137, 202), #3F51B5);
     color: #fff;
-    border-radius: 10px;
+    border-radius: 5px;
 }

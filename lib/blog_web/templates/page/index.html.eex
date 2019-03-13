@@ -1,23 +1,21 @@
 <main>
   <%= for post <- assigns.posts do %>
 
-  <article class="post">
+  <article class="post-listing">
     <header>
-      <h2 class="title">
-        <a href="/soft-delte"><%= post.title %></a>
+      <h2 class="post-listing__title">
+        <a href="/posts/<%= post.slug %>"><%= post.title %></a>
       </h2>
+      <small><%= format_date(post.published_date) %></small>
     </header>
-    <div class="content">
-      <%= raw post.content %>
+    <div class="post-listing__content">
+      <%= post.blurb %>
     </div>
-    <footer class="footer">
-    <div class="tags">
+    <footer class="post-listing__footer">
+      <div class="tags">
         <%= for tag <- post.tags do %>
           <a href="/tags/<%= tag.name %>"><%= tag.name %></a>
         <% end %>
-      </div>
-      <div class="infos">
-        <span>22 FEB 2019</span>
       </div>
     </footer>
 
