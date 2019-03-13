@@ -8,17 +8,15 @@
     color: #3F51B5;
 }
 
-.post-listing small {
+.post-listing small, .post small {
     font-style: oblique;
-    font-size: .75em;
     color: #3d3d3d;
 }
 
 .post-listing__content {
-    /* margin-top: 10px; */
     margin: 5px 0;
     color: #1a1a1a;
-    font-size: .8em;
+    font-size: .95em;
 }
 
 .post-listing__footer {
@@ -26,11 +24,33 @@
     margin-top: 10px;
 }
 
-.post-listing .tags a {
+.post-listing .tags a, .post .tags a {
     padding: 2px 10px;
     margin-right: 5px;
     /* background-color: #3F51B5; */
     background: linear-gradient(157deg, rgb(106, 137, 202), #3F51B5);
     color: #fff;
     border-radius: 5px;
+}
+
+.post {
+    line-height: 1.8;
+    color: #2b2b2b;
+}
+
+.post .tags a {
+    font-size: 14px;
+}
+
+.post pre {
+    border: solid 1px #CFD8DC;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #ECEFF1;
+}
+
+code.inline {
+    background-color: #ECEFF1;
+    border-radius: 5px;
+    padding: 3px 4px;
 }

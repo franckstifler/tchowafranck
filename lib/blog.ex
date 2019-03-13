@@ -3,9 +3,28 @@ defmodule Blog do
 
   alias Blog.{Post, Tag, Repo}
 
-  def get_posts() do
+  def get_all_posts() do
     query =
-      from p in Post, where: [published: true], preload: [:tags], order_by: [desc: :inserted_at]
+      from p in Post,
+        where: [published: true],
+        preload: [:tags],
+        order_by: [desc: :published_date]
+
+    Repo.all(query)
+  end
+
+  def get_post_by_slug(slug) do
+    Repo.get_by(Post, slug: slug)
+    |> Repo.preload([:tags])
+  end
+
+  def get_posts_by_tag(tag) do
+    query =
+      from p in Post,
+        join: t in assoc(p, :tags),
+        where: t.name == ^tag,
+        preload: [:tags],
+        order_by: [desc: :published_date]
 
     Repo.all(query)
   end
@@ -33,7 +52,7 @@ defmodule Blog do
     params
     |> String.split(",")
     |> Enum.map(&String.trim/1)
-    |> Enum.reject(& &1 == "")
+    |> Enum.reject(&(&1 == ""))
     |> Enum.map(&String.downcase/1)
     |> insert_and_get_all()
   end

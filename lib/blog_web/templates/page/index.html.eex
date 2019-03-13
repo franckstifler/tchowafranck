@@ -1,4 +1,5 @@
 <main>
+  <p style="font-style: oblique;"> Tagged in: <%= assigns[:tag] %> </p>
   <%= for post <- assigns.posts do %>
 
   <article class="post-listing">
