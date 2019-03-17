@@ -18,7 +18,7 @@ The blog is code is very simple and works at follows:
 The frontend part is just made of CSS that I wrote, no other library was used. The Phoenix web server renders the EEx templates and sends them to the browser. We will discuss about some of the animations on the links, and other CSS features.
 
 ## Hosting
-The website is hosted on Heroku, and I'm planning to purchase a custom domain name as soon as possible. 
+The website is hosted on Gigalixir, and I'm planning to purchase a custom domain name as soon as possible. I was planning to go for Heroku, but my during my previous experiences with Heroku, I noticed the app sleeps frequently on free tier. There are other limitations with Heroku, that are available on Gigalixir. You can read more about it <a href="https://hexdocs.pm/phoenix/heroku.html#limitations">here</a>.
 
 ## Code
 The source code of the blog is on my GitHub account: [blog source code](https://github.com/franckstifler/tchowafranck)
@@ -28,4 +28,4 @@ The source code of the blog is on my GitHub account: [blog source code](https://
 - Publish content frequently
 - Include (email) subscriptions
 
-Stay tuned
+Stay tuned!
