@@ -18,4 +18,12 @@ defmodule BlogWeb.PageController do
 
     render(conn, "index.html", posts: posts, tag: tag)
   end
+
+  def about(conn, _) do
+    render(conn, "about.html")
+  end
+
+  def contact(conn, _) do
+    render(conn, "contact.html")
+  end
 end

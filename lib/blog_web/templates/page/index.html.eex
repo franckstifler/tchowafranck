@@ -1,5 +1,7 @@
 <main>
+  <%= if assigns[:tag] do %>
   <p style="font-style: oblique;"> Tagged in: <%= assigns[:tag] %> </p>
+  <% end %>
   <%= for post <- assigns.posts do %>
 
   <article class="post-listing">

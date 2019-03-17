@@ -2,7 +2,7 @@
     <header>
         <h1><%= assigns.post.title %></h1>
         <div class="tags">
-        <small><%= format_date(assigns.post.published_date) %>,</small>
+        <small><%= format_date(assigns.post.published_date) %></small>
         <%= for tag <- assigns.post.tags do %>
           <a href="/tags/<%= tag.name %>"><%= tag.name %></a>
         <% end %>

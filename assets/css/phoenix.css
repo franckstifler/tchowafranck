@@ -23,3 +23,10 @@ a {
   width: 80%;
   margin: 0 auto;
 }
+
+@media only screen and (max-width: 770px) {
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+}

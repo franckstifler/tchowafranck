@@ -20,6 +20,10 @@ defmodule BlogWeb.Router do
 
     get "/posts/:slug", PageController, :show
     get "/tags/:tag", PageController, :tag
+
+    get "/about", PageController, :about
+
+    get "/contact", PageController, :contact
   end
 
   # Other scopes may use custom stacks.
