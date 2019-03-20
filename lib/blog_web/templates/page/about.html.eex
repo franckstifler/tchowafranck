@@ -1,7 +1,7 @@
 <section class="about">
     <h3>About me</h3>
     <p>
-        I'm Tchowa Franck, software developer and computer science teacher that speaks and writes both English and French.
+        I'm Tchowa Franck, software developer and computer science teacher, a tech enthusiast.
     </p>
     <p>
         Welcome to our blog, where we will be sharing experiences on CSS, Elixir, JavaScript, Laravel and so many interesting things. I will do my best to provide content weekly or 14 days maximum. I've been blogging for years, <a target="_blank" href="franckstilfer.blogspot.com">here</a>.
@@ -9,7 +9,7 @@
     <h3>My tech Stack</h3>
     <div>
         <p>The programming languages I use every day are <a target="_blank" href="https://elixir-lang.org">Elixir/Erlang</a>, <a target="_blank" href="#">SQL</a> and <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a>. I use <a target="_blank" href="https://phoenixframework.org">Phoenix</a>, <a target="_blank" href="https://hexdocs.pm/ecto/">Ecto </a>with either MySQL or Postgres to build backends, and I can use <a target="_blank" href="https://reactjs.org/">React.js</a>, <a target="_blank" href="https://vuejs.org">Vue.js</a> and <a target="_blank" href="https://angular.io">Angular</a> to build frontend apps,
-        though I tend to favor either <a target="_blank" href="https://vuejs.org">Vue.js</a> or <a target="_blank" href="https://angular.io">Angular</a>. I can use VSC (Git), and I'm present on <a target="_blank" href="https://github.com">GitHub</a> and <a target="_blank" href="https://gitlab.com">GitLab</a>.
+        though I tend to favor either <a target="_blank" href="https://vuejs.org">Vue.js</a> or <a target="_blank" href="https://angular.io">Angular</a>. I can use VCS (Git), and I'm present on <a target="_blank" href="https://github.com">GitHub</a> and <a target="_blank" href="https://gitlab.com">GitLab</a>.
         </p>
         <p>
         Other technologies I've used to build projects are: <a target="_blank" href="https://absinthe-graphql.org/">GraphQL(Absinthe)</a>, <a href="#">Laravel</a>, <a href="https://nodejs.org">Node.js</a>(<a target="_blank" href="https://expressjs.com/">Express.js</a>, <a target="_blank" href="https://socket.io/">Socket.io</a>), <a target="_blank" href="https://electronjs.org/">Electron</a>.

@@ -10,7 +10,7 @@ Welcome once more, I'm very excited on this new challenge awaiting me, but it's 
 
 ## Development
 I build this blog using Elixir and Phoenix, that we will talk so much about on this blog, inspired by other great people works: [jackmarchant.com](https://www.jackmarchant.com).
-The blog is code is very simple and works at follows:
+The blog code is very simple and works at follows:
 - I write articles in markdown
 - At each deploy, a task (we will talk about in a comming article) navigates in the folder of the markdown files, and converts it article to a valid html code using the [Earmark](https://github.com/pragdave/earmark/blob/master/README.md) library.
 - The html code from the markdown is stored in the database, and it's content displayed using the `raw` function of Phoenix.
