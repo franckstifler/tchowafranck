@@ -4,7 +4,7 @@
         <div class="tags">
         <small><%= format_date(assigns.post.published_date) %></small>
         <%= for tag <- assigns.post.tags do %>
-          <a href="/tags/<%= tag.name %>"><%= tag.name %></a>
+          <a href={"/tags/#{tag.name}"}><%= tag.name %></a>
         <% end %>
       </div>
     </header>
