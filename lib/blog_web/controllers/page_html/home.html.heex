@@ -1,0 +1,27 @@
+<Layouts.app flash={@flash}>
+  <main>
+    <%= if assigns[:tag] do %>
+      <p style="font-style: oblique;">Tagged in: {assigns[:tag]}</p>
+    <% end %>
+    <%= for post <- assigns.posts do %>
+      <article class="post-listing">
+        <header>
+          <h2 class="post-listing__title">
+            <a href={"/posts/#{post.slug}"}>{post.title}</a>
+          </h2>
+          <small>{format_date(post.published_date)}</small>
+        </header>
+        <div class="post-listing__content">
+          {post.blurb}
+        </div>
+        <footer class="post-listing__footer">
+          <div class="tags">
+            <%= for tag <- post.tags do %>
+              <a href={"/tags/#{tag.name}"}>{tag.name}</a>
+            <% end %>
+          </div>
+        </footer>
+      </article>
+    <% end %>
+  </main>
+</Layouts.app>

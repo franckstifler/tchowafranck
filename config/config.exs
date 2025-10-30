@@ -8,14 +8,19 @@
 import Config
 
 config :blog,
-  ecto_repos: [Blog.Repo]
+  ecto_repos: [Blog.Repo],
+  generators: [timestamp_type: :utc_datetime]
 
 # Configures the endpoint
 config :blog, BlogWeb.Endpoint,
   url: [host: "localhost"],
-  render_errors: [view: BlogWeb.ErrorView, accepts: ~w(html json), layout: false],
+  adapter: Bandit.PhoenixAdapter,
+  render_errors: [
+    formats: [html: BlogWeb.ErrorHTML, json: BlogWeb.ErrorJSON],
+    layout: false
+  ],
   pubsub_server: Blog.PubSub,
-  live_view: [signing_salt: "TLinoluZ"]
+  live_view: [signing_salt: "5hiWDNMP"]
 
 # Configures the mailer
 #
@@ -26,21 +31,18 @@ config :blog, BlogWeb.Endpoint,
 # at the `config/runtime.exs`.
 config :blog, Blog.Mailer, adapter: Swoosh.Adapters.Local
 
-# Swoosh API client is needed for adapters other than SMTP.
-config :swoosh, :api_client, false
-
 # Configure esbuild (the version is required)
 config :esbuild,
-  version: "0.14.29",
-  default: [
+  version: "0.25.4",
+  blog: [
     args:
-      ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
+      ~w(js/app.js --bundle --target=es2022 --outdir=../priv/static/assets/ --external:/fonts/* --external:/images/* --alias:@=.),
     cd: Path.expand("../assets", __DIR__),
-    env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
+    env: %{"NODE_PATH" => [Path.expand("../deps", __DIR__), Mix.Project.build_path()]}
   ]
 
 # Configures Elixir's Logger
-config :logger, :console,
+config :logger, :default_formatter,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
