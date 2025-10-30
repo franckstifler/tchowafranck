@@ -6,7 +6,11 @@ defmodule Blog.PostParser do
   end
 
   def run() do
-    "priv/posts/*.md"
+    app_dir = Application.app_dir(:blog)
+    posts_location = "priv/posts/*.md"
+
+    app_dir
+    |> Path.join(posts_location)
     |> Path.wildcard()
     |> Stream.map(&read_file/1)
     |> Enum.to_list()
