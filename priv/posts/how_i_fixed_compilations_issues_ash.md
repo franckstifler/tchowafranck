@@ -1,14 +1,14 @@
 ---
-title: How I fixes my compilations issues in my Ash Project.
+title: How I fixed my compilations issues in my Ash Project.
 published: true
 published_date: 2025-11-20 12:00:00
-blurb: A beginning to a new and hopefully long journey.
-tags: elixir, ash, ecto
+blurb: Find and solve compilation issues
+tags: elixir, ash, compilation
 ---
 
-Hi all. I did not want to start my Ash series with this article, but finally it's worth it.
+Hi all. I did not want to start my Ash series with this article, but I think it's worth it.
 
-I've beeing building a multitenant app for years now [Servixo](https://mbc.monbord.com/). It's an application aimed at businesses selling Services and Products. We aim to provide a clean an easy invoicing, billing, ordering, online services etc... platform.
+I've been building a multitenant app for years now [Servixo](https://mbc.monbord.com/). It's an application aimed at businesses selling Services and Products. We aim to provide a clean an easy invoicing, billing, ordering, online services etc... platform.
 
 It was a Phoenix, Vue.js project initially and we decided to move it to Ash (more on this in new articles).
 
