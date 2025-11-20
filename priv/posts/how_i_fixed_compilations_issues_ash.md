@@ -1,5 +1,5 @@
 ---
-title: How I fixed my compilations issues in my Ash Project.
+title: How I fixed my compilations issues in my Ash Project
 published: true
 published_date: 2025-11-20 12:00:00
 blurb: Find and solve compilation issues
@@ -12,14 +12,14 @@ I've been building a multitenant app for years now [Servixo](https://mbc.monbord
 
 It was a Phoenix, Vue.js project initially and we decided to move it to Ash (more on this in new articles).
 
-Everything went well until I encountered compilations issues. I was modifying a single liveview file, and had all of my domains (7 of them) recompile; *Domains are one of the heaviest things to recompile in Ash*. That's about 5s lost everytime I'm wasting each time I save or touch my liveview files. I always though Ash was doing something anoying behind the scenes, and that some how there was some relations between my domains I was not seeing.
+Everything went well until I encountered compilations issues. I was modifying a single liveview file, and had all of my domains (7 of them) recompile; *Domains are one of the heaviest things to recompile in Ash*. That's about 5s lost everytime I'm saving my liveview files. I always though Ash was doing something anoying behind the scenes, and that somehow there was some relations between my domains I was not seeing.
 
-This is not related to Ash only, if you feel you don't understand your Elixir recompile cycles, they're somewhere in your code and giving you that bad DX.
+This is not related to Ash only, if you feel you don't understand your Elixir recompile cycles, they're somewhere in your code that's causing that bad DX.
 
 ## Where did my troubles come from?
 The first trouble I had was having all the resources in one Domain. It was intentionnal because we were migrating from an existing structure with Phoenix Contexts, and putting everything in a single Domain was the easiest thing to do and easy to refactor. I never intended the compilation to be as impacted. Splitting the app in the corresponding domains solved the first issue we faced.
 
-The secound trouble was not detectable from eyesigth. I have a notifier.ex in my app, which build emails to send to users. And because I wanted to have route verified using *Phoenix.VerifiedRoutes*, I did this naive thing in my notifier code:
+The secound trouble was not detectable from eyesigth. I have a notifier.ex in my app, which build emails to send to users. And because I wanted to have route verified using *Phoenix.VerifiedRoutes* `(~p"/route)`, I did this naive thing in my notifier code:
 
 ```elixir
 use Phoenix.VerifiedRoutes,
@@ -58,7 +58,7 @@ Renato then suggests to find the relation between the last file `file4.ex` and t
 $ mix xref graph --source lib/myapp/file4.ex --sink lib/myapp_web/live/budget/file_live.ex
 ```
 
-This will list a dependency tree having file4.ex at the top. Locate your `file_live.ex` and find its ancestors in the tree bottom to top. You'll find the cause of the recompilation of that file. In most cases *transitive compile-time dependencies* are the reason you have many files recompiling.
+This will list a dependency tree having `file4.ex` at the top. Locate your `file_live.ex` and find its ancestors in the tree bottom to top. You'll find the cause of the recompilation of that file. In most cases *transitive compile-time dependencies* are the reason you have many files recompiling.
 
 In my case I just had to remove the `use Phoenix.VerifiedRoutes...` from my notifier module and just use plain urls.
 
