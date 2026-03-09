@@ -12,9 +12,7 @@ defmodule Blog.Application do
       Blog.Repo,
       {DNSCluster, query: Application.get_env(:blog, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: Blog.PubSub},
-      # Start a worker by calling: Blog.Worker.start_link(arg)
-      # {Blog.Worker, arg},
-      # Start to serve requests, typically the last entry
+      Blog.Metrics,
       BlogWeb.Endpoint,
       Blog.PostParser
     ]
