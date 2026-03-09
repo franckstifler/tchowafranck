@@ -51,12 +51,19 @@ defmodule Blog.PostParser do
   end
 
   defp put_slug(metadata) do
-    slug =
-      metadata.title
-      |> String.downcase()
-      |> String.split(" ", trim: true)
-      |> Enum.join("-")
+    slug = slugify(metadata.title)
 
     Map.put(metadata, :slug, slug)
+  end
+
+  defp slugify(text) when is_binary(text) do
+    text
+    |> String.downcase()
+    # Replace non-word chars with hyphens
+    |> String.replace(~r/[^\w-]/u, "-")
+    # Replace multiple hyphens with single
+    |> String.replace(~r/-+/, "-")
+    # Trim hyphens from start/end
+    |> String.replace(~r/^-|-$/, "")
   end
 end
