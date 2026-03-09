@@ -11,6 +11,7 @@ defmodule Blog.Post do
     field :blurb, :string
 
     many_to_many(:tags, Blog.Tag, join_through: "posts_tags", on_replace: :delete)
+    has_many :comments, Blog.Comment
     timestamps()
   end
 

@@ -19,6 +19,7 @@ defmodule BlogWeb.Router do
 
     get "/", PageController, :home
     get "/posts/:slug", PageController, :show
+    post "/posts/:slug/comments", PageController, :create_comment
     get "/tags/:tag", PageController, :tag
 
     get "/about", PageController, :about

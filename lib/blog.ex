@@ -1,7 +1,7 @@
 defmodule Blog do
   import Ecto.Query
 
-  alias Blog.{Post, Tag, Repo}
+  alias Blog.{Post, Tag, Comment, Repo}
 
   def get_all_posts() do
     query =
@@ -14,8 +14,9 @@ defmodule Blog do
   end
 
   def get_post_by_slug(slug) do
+    comments_query = from(c in Comment, where: c.approved == true, order_by: [asc: :inserted_at])
     Repo.get_by(Post, slug: slug)
-    |> Repo.preload([:tags])
+    |> Repo.preload([:tags, comments: comments_query])
   end
 
   def get_posts_by_tag(tag) do
@@ -61,5 +62,27 @@ defmodule Blog do
     maps = Enum.map(names, &%{name: &1})
     Repo.insert_all(Tag, maps, on_conflict: :nothing)
     Repo.all(from t in Tag, where: t.name in ^names)
+  end
+
+  def create_comment(params) do
+    %Comment{}
+    |> Comment.changeset(params)
+    |> Repo.insert()
+  end
+
+  def get_comments_for_post(post_id) do
+    from(c in Comment, where: c.post_id == ^post_id and c.approved == true, order_by: [asc: :inserted_at])
+    |> Repo.all()
+  end
+
+  def list_unapproved_comments() do
+    from(c in Comment, where: c.approved == false, order_by: [desc: :inserted_at])
+    |> Repo.all()
+  end
+
+  def approve_comment(comment_id) do
+    Repo.get!(Comment, comment_id)
+    |> Comment.changeset(%{approved: true})
+    |> Repo.update()
   end
 end

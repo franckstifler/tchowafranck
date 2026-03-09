@@ -11,6 +11,21 @@ defmodule BlogWeb.PageController do
     render(conn, :show, post: post)
   end
 
+  def create_comment(conn, %{"comment" => %{"post_id" => post_id} = comment_params}) do
+    dbg conn.assigns
+    case Blog.create_comment(comment_params) do
+      {:ok, _comment} ->
+        post = Blog.Repo.get!(Blog.Post, post_id)
+        conn
+        |> put_flash(:info, "Comment submitted successfully! It will be visible after approval.")
+        |> redirect(to: "/posts/#{post.slug}")
+
+      {:error, changeset} ->
+        post = Blog.get_post_by_slug(Blog.Repo.get!(Blog.Post, post_id).slug)
+        render(conn, :show, post: post, comment_changeset: changeset)
+    end
+  end
+
   def tag(conn, %{"tag" => tag}) do
     posts = Blog.get_posts_by_tag(tag)
     render(conn, :home, posts: posts, tag: tag)
