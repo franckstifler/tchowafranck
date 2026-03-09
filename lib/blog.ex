@@ -15,6 +15,7 @@ defmodule Blog do
 
   def get_post_by_slug(slug) do
     comments_query = from(c in Comment, where: c.approved == true, order_by: [asc: :inserted_at])
+
     Repo.get_by(Post, slug: slug)
     |> Repo.preload([:tags, comments: comments_query])
   end
@@ -71,7 +72,10 @@ defmodule Blog do
   end
 
   def get_comments_for_post(post_id) do
-    from(c in Comment, where: c.post_id == ^post_id and c.approved == true, order_by: [asc: :inserted_at])
+    from(c in Comment,
+      where: c.post_id == ^post_id and c.approved == true,
+      order_by: [asc: :inserted_at]
+    )
     |> Repo.all()
   end
 

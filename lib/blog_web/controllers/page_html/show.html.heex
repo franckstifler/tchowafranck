@@ -16,25 +16,25 @@
 
   <section class="comments-section">
     <h2>Comments</h2>
-    
+
     <%= if @flash[:info] do %>
       <div class="alert alert-info">
         {@flash[:info]}
       </div>
     <% end %>
-    
+
     <%= if @flash[:error] do %>
       <div class="alert alert-error">
         {@flash[:error]}
       </div>
     <% end %>
-    
+
     <%= if length(assigns.post.comments) > 0 do %>
       <div class="comments-list">
         <%= for comment <- assigns.post.comments do %>
           <div class="comment">
             <div class="comment-header">
-              <strong><%= comment.author %></strong>
+              <strong>{comment.author}</strong>
               <small>{format_date(comment.inserted_at)}</small>
             </div>
             <div class="comment-content">
@@ -52,22 +52,22 @@
       <form action={"/posts/#{assigns.post.slug}/comments"} method="post">
         <input type="hidden" name="_csrf_token" value={get_csrf_token()} />
         <input type="hidden" name="comment[post_id]" value={assigns.post.id} />
-        
+
         <div class="form-group">
           <label for="comment_author">Name</label>
           <input type="text" id="comment_author" name="comment[author]" required />
         </div>
-        
+
         <div class="form-group">
           <label for="comment_email">Email</label>
           <input type="email" id="comment_email" name="comment[email]" required />
         </div>
-        
+
         <div class="form-group">
           <label for="comment_content">Comment</label>
           <textarea id="comment_content" name="comment[content]" rows="4" required></textarea>
         </div>
-        
+
         <button type="submit">Submit Comment</button>
       </form>
     </div>

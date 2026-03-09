@@ -12,10 +12,10 @@ defmodule BlogWeb.PageController do
   end
 
   def create_comment(conn, %{"comment" => %{"post_id" => post_id} = comment_params}) do
-    dbg conn.assigns
     case Blog.create_comment(comment_params) do
       {:ok, _comment} ->
         post = Blog.Repo.get!(Blog.Post, post_id)
+
         conn
         |> put_flash(:info, "Comment submitted successfully! It will be visible after approval.")
         |> redirect(to: "/posts/#{post.slug}")
