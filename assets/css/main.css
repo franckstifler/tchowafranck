@@ -58,3 +58,21 @@ code.inline {
 .about a, .post a {
     color: #3F51B5;
 }
+
+.about-page {
+  margin: auto;
+  line-height: 1.5;
+}
+
+.about-page h1 {
+  /* font-size: 2.2rem; */
+  margin-bottom: 1rem;
+}
+
+.about-page h2 {
+  /* margin-top: 2rem; */
+}
+
+.about-page ul {
+  margin-left: 20px;
+}

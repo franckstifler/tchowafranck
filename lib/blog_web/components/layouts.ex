@@ -40,7 +40,6 @@ defmodule BlogWeb.Layouts do
         <h1>Franck Tchowa</h1>
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a target="_blank" href="https://github.com/franckstifler">GitHub</a></li>
           <li><a href="/about">About Me</a></li>
           <li><a href="/contact">Contact Me</a></li>
         </ul>
