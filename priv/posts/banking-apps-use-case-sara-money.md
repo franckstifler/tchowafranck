@@ -8,7 +8,7 @@ tags: cameroon, banking, sara-money, afriland, user-experience, security
 
 Hi all,
 
-A few weeks ago, I wrote about [government websites in Cameroon](/posts/beyond-the-hype,-a-critical-look-at-user-experience-in-cameroon's-public-service-digitalisation) that promise digital services but deliver frustration instead. The pattern was clear: poor design, broken features, and no regard for the user.
+A few weeks ago, I wrote about [government websites in Cameroon](/posts/beyond-the-hype-a-critical-look-at-user-experience-in-cameroon-s-public-service-digitalisation) that promise digital services but deliver frustration instead. The pattern was clear: poor design, broken features, and no regard for the user.
 
 Now I want to turn to another sector where digitalisation is supposed to make life easier: banking. Mobile banking apps have become essential. They let us check balances, transfer money, and pay bills without standing in long queues. But what happens when the mobile banking app itself is unreliable, insecure, and missing basic features?
 
