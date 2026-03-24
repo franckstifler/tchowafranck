@@ -1,22 +1,22 @@
----
+-----
 title: Sara Money, My Banking App Stopped Working and My Money Is at Risk
 published: true
 published_date: 2026-03-22 12:00:00
 blurb: I used to rely on Sara Money for my banking. Then one day, transactions vanished, beneficiaries disappeared, and the app started putting my money at risk.
 tags: cameroon, banking, sara-money, afriland, user-experience, security
----
+-----
 
 Hi all,
 
-A few weeks ago, I wrote about government websites in Cameroon that promise digital services but deliver frustration instead. The pattern was clear: poor design, broken features, and no regard for the user.
+A few weeks ago, I wrote about [government websites in Cameroon](/posts/beyond-the-hype,-a-critical-look-at-user-experience-in-cameroon's-public-service-digitalisation) that promise digital services but deliver frustration instead. The pattern was clear: poor design, broken features, and no regard for the user.
 
-Now I want to turn to another sector where digitalisation is supposed to make life easier: banking. Mobile banking apps have become essential. They let us check balances, transfer money, and pay bills without standing in long queues. But what happens when the banking app itself is unreliable, insecure, and missing basic features?
+Now I want to turn to another sector where digitalisation is supposed to make life easier: banking. Mobile banking apps have become essential. They let us check balances, transfer money, and pay bills without standing in long queues. But what happens when the mobile banking app itself is unreliable, insecure, and missing basic features?
 
-I have been using Sara Money, Afriland First Bank’s mobile banking app, for a while. It was convenient. I could check my balance, send money, and track my transactions without going to a branch. Then, a few months ago, things started breaking.
+Afriland First Bank, one of the largest banks in Cameroon, offers Sara Money as its mobile banking app. Sara Money was convenient. As a user, I could check my balance, send money, and track my transactions without going to a physical office. Then, a few months ago, things started breaking.
 
-At first, it was small annoyances. Then features I relied on simply stopped working. And finally, I discovered something that genuinely shocked me: the app’s security is so weak that anyone with access to my unlocked phone could empty my account without knowing my password.
+At first, it was small annoyances. Then features I relied on simply stopped working. And finally, I discovered something that genuinely shocked me:  someone with access to my unlocked phone could empty my account without knowing my password.
 
-I decided to document my experience and then looked at what other users are saying. The picture is alarming.
+So, I decided to document my experience and then looked at what other users are saying. The picture is alarming.
 
 ## My Personal Experience: A Timeline of Frustration
 
@@ -24,35 +24,41 @@ I decided to document my experience and then looked at what other users are sayi
 
 Sometimes, the login just fails. I enter my credentials, and the app either freezes or gives an error. I have to try again later. It is not a network issue; other apps work fine. This has been happening on and off for months.
 
-### 2. Transaction History Disappeared—and When It Does Show, It’s Incomplete
+### 2. Transaction History Disappears—and When It Does Show, It’s Incomplete
 
 For a while, I could see my past transactions. Then, without any warning, that feature stopped working. For months now, when I go to the transaction history, I see nothing. I cannot track my spending, verify if a payment went through, or keep records for my own accounting.
 
-Even when the history does load, it is missing a crucial detail: **the account balance after each transaction**. When I send 10,000 FCFA, the transaction line only shows the amount deducted. It does not show the remaining balance after that operation. This is a serious problem for several reasons:
+When the history does load, it is missing a crucial detail: **the account balance after each transaction**. Here's how the history shows when it works:
+
+| Date | Description | Amount |
+| --- | --- | --- |
+| 2025-10-15 | Transfer to John | +$100 |
+| 2025-10-14 | Purchase at store | -$50 |
+ 
+It does not show the remaining balance after that operation. This is a serious problem for several reasons:
 
 - I cannot easily see if my account has been debited without my knowledge. If a fraudulent transaction appears, I would have to calculate my balance manually to detect it.
 - I cannot follow my spending and earnings over time. A proper transaction list should show the running balance so I can track my finances at a glance.
 - If a transaction is hidden or deleted by internal filters—or worse, intentionally removed—I would have no way to notice the discrepancy.
 
-A banking app that does not show your balance after each transaction is not helping you manage your money. It is hiding the full picture.
+A mobile banking app that does not show your balance after each transaction is not helping you manage your money. It is hiding the full picture.
 
 ### 3. Beneficiaries Vanished
 
-This is even worse. I had a list of saved beneficiaries—people I send money to regularly. That list is now empty. The app no longer populates any saved beneficiary. When I try to send money, I have to manually enter the full bank account number every single time. This is slow and prone to errors. One wrong digit and my money could go to someone else. There is no warning, no explanation. It just stopped working.
+This was a feature I used frequently and found very useful. I had a list of saved beneficiaries. I could tap on a beneficiary and send money instantly.
+The app no longer populates any saved beneficiary. When I try to send money, I have to manually enter the full bank account number every single time. This is slow and prone to errors. One wrong digit and my money could go to someone else. There is no warning, no explanation. It just stopped working.
 
 ### 4. OTP: A Security Nightmare
 
-Now we get to the most serious issue.
+OTP stands for One-Time Password. It's a code you receive to verify your identity when performing sensitive actions like transferring money, changing your password, or linking a new device.
 
-When you perform a transaction, Sara Money sends a one‑time password (OTP) to confirm it. That is normal. But here is how it does it: it sends the OTP **both as an SMS and as a push notification inside the app**.
+Sara Money sends a one‑time password (OTP) in order to confirm a transaction. This is normal. But here is how it does it: it sends the OTP **both as an SMS, email, or as a push notification inside the app**.
 
-Think about that for a moment. If someone has physical access to your unlocked phone, they can see the OTP in the notification banner without even opening the app. They do not need your password. They do not need to know anything else. They can simply open the app, initiate a transfer, and read the OTP from the top of the screen.
+Think about that for a moment. If someone has physical access to your unlocked phone, and the app is connected to your account and running, they can see the OTP in the notification banner or via SMS to confirm a transaction without needing your password or biometrics.
 
 **This is not secure.**
 
-A banking app should **never** display a transaction confirmation code in a notification that appears on the lock screen or in the notification panel. The user should have to enter a transaction PIN, or re‑authenticate with their password or biometrics, before the OTP is even generated.
-
-For users outside Cameroon, relying on SMS alone is already a problem—SMS may not arrive reliably. But sending the OTP as a push notification inside the app is a security flaw that puts every user’s money at risk.
+A mobile banking app should **never** display a transaction confirmation code in a notification that appears on the lock screen or in the notification panel. The user should have to enter a transaction PIN, security questions, or re‑authenticate with their password or biometrics, before the OTP is even generated.
 
 ### 5. Transactions Sometimes Fail
 
@@ -105,35 +111,40 @@ The user sentiment is overwhelmingly negative:
 
 ## Why This Is Not Acceptable
 
-Sara Money is not a game. It is a banking application that manages people’s money. When basic features like transaction history and saved beneficiaries disappear, when login fails randomly, and when security is flawed, the bank is failing its customers.
+Sara Money is a mobile banking application that manages people’s money. When basic features like transaction history and saved beneficiaries disappear or stop working, when login fails randomly, or when security is flawed, the bank is failing their customers.
 
-For diaspora users, the situation is even more critical. They cannot walk into a branch in Cameroon to fix issues. They rely entirely on the app to manage their finances. When the app does not work, they are left with no way to access their money.
+For diaspora users, the situation is even more critical. They cannot walk into a physical office in Cameroon to fix issues. They rely entirely on the app to manage their finances. When the app does not work, they are left with no way to access their money.
 
-And the security flaw I described—sending OTPs as push notifications that anyone can see—is a breach of basic banking security standards. It should not exist in any financial app, especially one from a major bank.
+And the security flaw I described—sending OTPs as push notifications—should not exist in any financial app, especially one from a major bank.
 
 ## What Needs to Change
 
-If Afriland wants to serve its customers digitally, it must address these issues immediately:
+If Afriland wants to serve its customers digitally, they must address these issues immediately:
 
-**1. Fix the broken features.** Transaction history and saved beneficiaries must work. These are not optional.
+**1. Fix the broken features.** Transaction history is not optional-it should work and be reliable. Saved beneficiaries should also work.
 
 **2. Show running balance in transaction history.** Every transaction line should display the account balance after the operation. This is essential for fraud detection and personal financial management.
+
+| Date | Description | Amount | Balance after transaction |
+|---|---|---|---|
+| 2025-10-15 | Transfer to John | +$100 | CFA 1,200 |
+| 2025-10-14 | Purchase at store | -$50 | CFA 1,100 |
 
 **3. Fix login reliability.** Login should work every time, not just sometimes.
 
 **4. Redesign the OTP flow.** Stop sending OTPs as push notifications visible on the lock screen. Require a transaction PIN or re‑authentication before generating an OTP.
 
-**5. Offer alternative OTP delivery.** For users abroad, SMS often fails. Provide options like email or WhatsApp.
+**5. Offer alternative OTP delivery.** For users abroad, SMS often fails. Provide options like email or WhatsApp. Or better yet, use an Authenticator app like Google Authenticator or Authy, for TOTP (Time-based One-Time Password).
 
-**6. Test updates before release.** Users should not be beta testers. If an update breaks core functionality, roll it back immediately.
-
-**7. Provide real customer service.** When users report problems, respond. Do not tell them to send a message through an app that does not work.
+**6. Provide real customer service.** When users report problems, respond. Do not tell them to send a message through an app that does not work.
 
 ## Final Thought
 
 I used to recommend Sara Money to friends. Now I cannot. I worry every time I open the app whether my money is safe and whether the transaction will go through.
 
-Digital banking can transform how we manage money. But only if it is done with care, reliability, and security. Afriland has a long way to go.
+Digital banking can transform how we manage money. But only if it is done with care, reliability, and security. Afriland should/have to do better.
+
+There's more to say about Sara Money, but I'll save that for another post.
 
 Have you experienced similar problems with Sara Money or another banking app? I would like to hear your story.
 
