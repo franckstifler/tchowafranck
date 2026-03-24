@@ -1,10 +1,10 @@
----
+-----
 title: Cautious one to one relationships
 published: true
 published_date: 2019-04-01 11:30:00
 blurb: Your one to one relationship is it a one to many or really a one to one?
 tags: sql, database, ecto
----
+-----
 
 Welcome! I've been looking into implementing a maling subscription system on the blog. I'm not yet through with the implementation but very soon it will be ready. Let's dive into today's topic.
 

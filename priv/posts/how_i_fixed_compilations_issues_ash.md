@@ -1,10 +1,10 @@
----
+-----
 title: How I fixed my compilations issues in my Ash Project
 published: true
 published_date: 2025-11-20 12:00:00
 blurb: Find and solve compilation issues
 tags: elixir, ash, compilation
----
+-----
 
 Hi all. I did not want to start my Ash series with this article, but I think it's worth it.
 

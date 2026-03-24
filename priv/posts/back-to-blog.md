@@ -1,10 +1,10 @@
----
+-----
 title: Back to blogging
 published: true
 published_date: 2019-09-14 08:30:00
 blurb: I'm back after a long time of absence
 tags: blog, studies, AI, NLP
----
+-----
 
 After some long months of absence, I'm back on writing. I've been very busy working on my dissertation. I've had the opportunity to explore some A.I(Artificial Intelligence) and NLP(Natural Language Processing). I worked with Python(new language to me), during this project and was amazed of the facility to get up and running with.
 

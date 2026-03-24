@@ -1,10 +1,10 @@
----
+-----
 title: Welcome to my blog
 published: true
 published_date: 2019-03-17 12:00:00
 blurb: A beginning to a new and hopefully long journey.
 tags: elixir, css
----
+-----
 
 Welcome once more, I'm very excited on this new challenge awaiting me, but it's something I always dreamed of: blogging. I've been blogging here [franckstifler.blogspot.com](https://www.franckstifler.blogpot.com), but I decided to build a new blog by myself and put in the efforts to maintain a community.
 

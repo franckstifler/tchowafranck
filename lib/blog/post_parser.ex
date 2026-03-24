@@ -20,10 +20,11 @@ defmodule Blog.PostParser do
     [metadata, content] =
       path
       |> File.read!()
-      |> String.split("---", trim: true)
+      |> String.split("-----", trim: true)
 
     metadata =
-      parse_metadata(metadata)
+      metadata
+      |> parse_metadata()
       |> put_slug()
 
     content = parse_content(content)
