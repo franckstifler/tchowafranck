@@ -72,4 +72,22 @@
       </form>
     </div>
   </section>
+  
+  <section class="related-articles">
+    <h2>Related Articles</h2>
+    <div class="related-posts-grid">
+      <%= for related_post <- assigns.related_posts do %>
+        <div class="related-post-card">
+          <h3><a href={"/posts/#{related_post.slug}"}>{related_post.title}</a></h3>
+          <p class="post-date">{format_date(related_post.published_date)}</p>
+          <div class="post-tags">
+            <%= for tag <- related_post.tags do %>
+              <a href={"/tags/#{tag.name}"} class="tag">{tag.name}</a>
+            <% end %>
+          </div>
+          <p class="post-excerpt">{raw(String.slice(related_post.content || "", 0, 150))}...</p>
+        </div>
+      <% end %>
+    </div>
+  </section>
 </Layouts.app>

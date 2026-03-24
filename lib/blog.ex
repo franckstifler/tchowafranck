@@ -89,4 +89,30 @@ defmodule Blog do
     |> Comment.changeset(%{approved: true})
     |> Repo.update()
   end
+
+  def get_related_posts(post, limit \\ 3) do
+    tag_names = Enum.map(post.tags, & &1.name)
+
+    query =
+      from p in Post,
+        join: t in assoc(p, :tags),
+        where: t.name in ^tag_names and p.id != ^post.id and p.published == true,
+        preload: [:tags],
+        group_by: p.id,
+        order_by: [desc: fragment("COUNT(*)"), desc: :published_date],
+        limit: ^limit
+
+    Repo.all(query)
+  end
+
+  def get_latest_posts(limit \\ 3) do
+    query =
+      from p in Post,
+        where: p.published == true,
+        preload: [:tags],
+        order_by: [desc: :published_date],
+        limit: ^limit
+
+    Repo.all(query)
+  end
 end
