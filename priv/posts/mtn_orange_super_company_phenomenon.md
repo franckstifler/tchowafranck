@@ -91,7 +91,14 @@ If Cameroon wants a healthy digital economy, several things must happen:
 
 ## Final Thought
 
-MTN and Orange are not evil companies. They provide essential services that millions of Cameroonians rely on every day. But their dominance has reached a point where it is stifling competition, harming consumers, and blocking the growth of a local tech ecosystem.
+MTN and Orange are not evil companies. They provide essential services that millions of Cameroonians rely on every day.
+Telcos dominate because:
+
+- Banking infrastructure is weak → they become fintech
+- Identity systems are weak → SIM becomes identity
+- Internet infrastructure is weak → they own access
+
+ But their dominance has reached a point where it is stifling competition, harming consumers, and blocking the growth of a local tech ecosystem.
 
 In a healthy digital economy, startups compete on ideas and execution. In Cameroon, they compete against two giants that control the entire playing field. That is not competition. That is survival.
 
