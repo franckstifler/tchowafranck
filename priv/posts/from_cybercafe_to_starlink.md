@@ -1,4 +1,4 @@
----
+-----
 title: From CyberCafes to Starlink — What It Meant to Be a Developer in Cameroon
 published: true
 published_date: 2026-05-19 12:00:00
@@ -6,7 +6,7 @@ blurb: I watched a guy on YouTube describe watching anime in Africa. It was pain
 language: en
 translation_key: cybercafe-to-starlink-cameroon
 tags: cameroon, africa, software-development, nostalgia, technology
----
+-----
 
 Hi all,
 
@@ -144,5 +144,5 @@ If you lived through this journey, you know exactly what I mean. If you did not,
 
 What is your most ridiculous developer memory from the early days? The time you lost code because the power went out? The time you downloaded something for a week and it was corrupted? The time you spent hours trying to read a scratched CD with toothpaste? I would love to hear it.
 
----
+- - -
 *Note: Bitcoin price as of May 2026. All specs and memories are real but exaggerated for comedic effect. You know who you are. Shout out to everyone who survived the CyberCafé era and knows the Windows XP product key by heart.*
