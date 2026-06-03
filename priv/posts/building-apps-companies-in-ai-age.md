@@ -3,6 +3,8 @@ title: AI Has Changed Everything for Software Engineers in Cameroon
 published: true
 published_date: 2026-04-23 18:00:00
 blurb: Building an app used to take months and cost a fortune. Today, with AI, anyone can ship a product in days. What does this mean for developers and entrepreneurs in Cameroon?
+language: en
+translation_key: ai-software-engineers-cameroon
 tags: cameroon, ai, digital-economy, africa, software-development, startups, technology
 -----
 

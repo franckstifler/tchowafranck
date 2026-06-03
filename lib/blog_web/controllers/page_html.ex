@@ -18,4 +18,9 @@ defmodule BlogWeb.PageHTML do
   defp format_to_text(days, _) when days == 1, do: "Yesterday"
   defp format_to_text(days, _) when days < 30, do: "#{days} days ago"
   defp format_to_text(_, date), do: Timex.format!(date, "{D} {Mshort} {YYYY}")
+
+  def language_label("en"), do: "English"
+  def language_label("fr"), do: "French"
+  def language_label(language) when is_binary(language), do: String.upcase(language)
+  def language_label(_), do: "Unknown"
 end

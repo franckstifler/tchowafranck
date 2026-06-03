@@ -8,6 +8,7 @@ defmodule BlogWeb.PageController do
 
   def show(conn, %{"slug" => slug}) do
     post = Blog.get_post_by_slug(slug)
+    translations = Blog.get_translations_for_post(post)
 
     related_posts =
       case Blog.get_related_posts(post, 3) do
@@ -15,7 +16,7 @@ defmodule BlogWeb.PageController do
         posts -> posts
       end
 
-    render(conn, :show, post: post, related_posts: related_posts)
+    render(conn, :show, post: post, related_posts: related_posts, translations: translations)
   end
 
   def create_comment(conn, %{"comment" => %{"post_id" => post_id} = comment_params}) do

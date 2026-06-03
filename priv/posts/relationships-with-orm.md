@@ -3,6 +3,7 @@ title: Cautious one to one relationships
 published: true
 published_date: 2019-04-01 11:30:00
 blurb: Your one to one relationship is it a one to many or really a one to one?
+language: en
 tags: sql, database, ecto
 -----
 

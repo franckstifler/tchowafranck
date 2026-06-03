@@ -3,6 +3,7 @@ title: How I fixed my compilations issues in my Ash Project
 published: true
 published_date: 2025-11-20 12:00:00
 blurb: Find and solve compilation issues
+language: en
 tags: elixir, ash, compilation
 -----
 

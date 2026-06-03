@@ -3,6 +3,8 @@ title: Sara Money, My Banking App Stopped Working and My Money Is at Risk
 published: true
 published_date: 2026-03-22 12:00:00
 blurb: I used to rely on Sara Money for my banking. Then one day, transactions vanished, beneficiaries disappeared, and the app started putting my money at risk.
+language: en
+translation_key: sara-money-banking-app-risk
 tags: cameroon, banking, sara-money, afriland, user-experience, security
 -----
 

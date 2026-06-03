@@ -3,6 +3,7 @@ title: Upgrading PostgreSQL 14 to 18 on macOS with Homebrew
 blurb: A step-by-step walkthrough of the gotchas, errors, and solutions when jumping four major versions using a bash loop
 published: true
 published_date: 2026-03-02 18:00:00
+language: en
 tags: postgresql, homebrew, macos, database, upgrade, pg_upgrade, troubleshooting
 -----
 

@@ -8,6 +8,17 @@
           <a href={"/tags/#{tag.name}"}>{tag.name}</a>
         <% end %>
       </div>
+      <%= if length(assigns.translations) > 0 do %>
+        <p class="post-translations">
+          Also available in
+          <%= for {translation, index} <- Enum.with_index(assigns.translations) do %>
+            <%= if index > 0 do %>
+              ,
+            <% end %>
+            <a href={"/posts/#{translation.slug}"}>{language_label(translation.language)}</a>
+          <% end %>
+        </p>
+      <% end %>
     </header>
     <div>
       {raw(assigns.post.content)}
@@ -72,7 +83,7 @@
       </form>
     </div>
   </section>
-  
+
   <section class="related-articles">
     <h2>Related Articles</h2>
     <div class="related-posts-grid">

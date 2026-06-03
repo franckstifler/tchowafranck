@@ -9,18 +9,30 @@ defmodule Blog.Post do
     field :published_date, :naive_datetime
     field :published, :boolean
     field :blurb, :string
+    field :language, :string, default: "en"
+    field :translation_key, :string
 
     many_to_many(:tags, Blog.Tag, join_through: "posts_tags", on_replace: :delete)
     has_many :comments, Blog.Comment
     timestamps()
   end
 
-  @fields [:title, :blurb, :slug, :content, :published_date, :published]
+  @fields [
+    :title,
+    :blurb,
+    :slug,
+    :content,
+    :published_date,
+    :published,
+    :language,
+    :translation_key
+  ]
+  @required_fields [:title, :blurb, :slug, :content, :published_date, :published, :language]
 
   def changeset(post, attrs) do
     post
     |> cast(attrs, @fields)
-    |> validate_required(@fields)
+    |> validate_required(@required_fields)
     |> unique_constraint(:slug, message: "slug #{attrs.slug} already taken")
   end
 end

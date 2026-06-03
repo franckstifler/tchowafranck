@@ -3,6 +3,7 @@ title: Welcome to my blog
 published: true
 published_date: 2019-03-17 12:00:00
 blurb: A beginning to a new and hopefully long journey.
+language: en
 tags: elixir, css
 -----
 

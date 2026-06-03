@@ -31,6 +31,19 @@ defmodule Blog do
     Repo.all(query)
   end
 
+  def get_translations_for_post(%Post{translation_key: nil}), do: []
+  def get_translations_for_post(%Post{translation_key: ""}), do: []
+
+  def get_translations_for_post(%Post{} = post) do
+    query =
+      from p in Post,
+        where:
+          p.translation_key == ^post.translation_key and p.id != ^post.id and p.published == true,
+        order_by: [asc: :language, asc: :title]
+
+    Repo.all(query)
+  end
+
   def insert_post(params) do
     Post
     |> Repo.get_by(slug: params.slug)

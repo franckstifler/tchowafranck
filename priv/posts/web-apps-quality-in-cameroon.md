@@ -3,6 +3,8 @@ title: Beyond the Hype, a Critical Look at User Experience in Cameroon's Public 
 published: true
 published_date: 2026-03-09 12:00:00
 blurb: Digitalisation promises efficiency and accessibility. But when government portals fail basic usability tests, they become just another barrier for citizens.
+language: en
+translation_key: web-apps-quality-cameroon
 tags: cameroon, ux, ui, govtech, digitalisation, public-service, security
 -----
 

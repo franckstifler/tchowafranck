@@ -3,6 +3,8 @@ title: The 'Super Company' Phenomenon, When Telcos Do Everything
 published: true
 published_date: 2026-04-12 21:00:00
 blurb: MTN and Orange no longer control just your calls and internet, but also your money, your loans, your entertainment, and even your business cloud services. What happens when two companies do absolutely everything?
+language: en
+translation_key: mtn-orange-super-company-phenomenon
 tags: cameroon, telecom, monopoly, competition, fintech, digital-economy
 -----
 

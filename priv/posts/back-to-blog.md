@@ -3,6 +3,7 @@ title: Back to blogging
 published: true
 published_date: 2019-09-14 08:30:00
 blurb: I'm back after a long time of absence
+language: en
 tags: blog, studies, AI, NLP
 -----
 

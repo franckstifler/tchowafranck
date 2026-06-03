@@ -23,6 +23,8 @@ config :blog, BlogWeb.Endpoint,
 # In test we don't send emails.
 config :blog, Blog.Mailer, adapter: Swoosh.Adapters.Test
 
+config :blog, start_post_parser: false
+
 # Print only warnings and errors during test
 config :logger, level: :warn
 
