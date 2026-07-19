@@ -9,11 +9,17 @@ defmodule Blog.PostParser do
     app_dir = Application.app_dir(:blog)
     posts_location = "priv/posts/*.md"
 
-    app_dir
-    |> Path.join(posts_location)
-    |> Path.wildcard()
-    |> Stream.map(&read_file/1)
-    |> Enum.to_list()
+    results =
+      app_dir
+      |> Path.join(posts_location)
+      |> Path.wildcard()
+      |> Stream.map(&read_file/1)
+      |> Enum.to_list()
+
+    slugs = for {:ok, post} <- results, do: post.slug
+    Blog.delete_posts_except(slugs)
+
+    results
   end
 
   defp read_file(path) do

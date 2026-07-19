@@ -23,6 +23,41 @@ defmodule BlogTest do
     end
   end
 
+  describe "delete_posts_except/1" do
+    test "deletes orphaned posts (including their tags) and keeps the rest" do
+      keep = insert_post!(slug: "keep")
+      {:ok, tagged} = Blog.insert_post(post_params(slug: "orphan-with-tags", tags: "elixir, phoenix"))
+      orphan = insert_post!(slug: "orphan")
+
+      deleted = Blog.delete_posts_except(["keep"])
+
+      assert Enum.sort(deleted) == ["orphan", "orphan-with-tags"]
+      assert Blog.get_post_by_slug("keep").id == keep.id
+      refute Blog.get_post_by_slug("orphan")
+      refute Blog.get_post_by_slug(tagged.slug)
+      refute Blog.get_post_by_slug(orphan.slug)
+    end
+
+    test "is a no-op when given an empty slug list" do
+      post = insert_post!(slug: "keep")
+
+      assert Blog.delete_posts_except([]) == []
+      assert Blog.get_post_by_slug("keep").id == post.id
+    end
+  end
+
+  defp post_params(attrs) do
+    Enum.into(attrs, %{
+      title: "Post #{System.unique_integer([:positive])}",
+      blurb: "A short blurb",
+      slug: "post-#{System.unique_integer([:positive])}",
+      content: "<p>Post content</p>",
+      published_date: ~N[2026-05-19 12:00:00],
+      published: true,
+      language: "en"
+    })
+  end
+
   defp insert_post!(attrs) do
     defaults = %{
       title: "Post #{System.unique_integer([:positive])}",
