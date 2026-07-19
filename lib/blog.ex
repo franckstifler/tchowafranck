@@ -13,6 +13,42 @@ defmodule Blog do
     Repo.all(query)
   end
 
+  def get_posts_by_language(language) do
+    query =
+      from p in Post,
+        where: p.published == true and p.language == ^language,
+        preload: [:tags],
+        order_by: [desc: :published_date]
+
+    Repo.all(query)
+  end
+
+  @doc """
+  Deletes every post whose slug is not in `slugs` (orphans left behind when a post's
+  title — and therefore its slug — changes, since `insert_post/1` upserts by slug and
+  never removes). Tag associations are cleared first (the `posts_tags` join has no
+  cascade); comments cascade via the DB. Returns the list of deleted slugs.
+
+  No-op when `slugs` is empty, to avoid wiping the table if no source files were found.
+  """
+  def delete_posts_except([]), do: []
+
+  def delete_posts_except(slugs) do
+    orphans =
+      from(p in Post, where: p.slug not in ^slugs, preload: [:tags])
+      |> Repo.all()
+
+    Enum.each(orphans, fn post ->
+      post
+      |> Ecto.Changeset.change()
+      |> Ecto.Changeset.put_assoc(:tags, [])
+      |> Repo.update!()
+      |> Repo.delete!()
+    end)
+
+    Enum.map(orphans, & &1.slug)
+  end
+
   def get_post_by_slug(slug) do
     comments_query = from(c in Comment, where: c.approved == true, order_by: [asc: :inserted_at])
 

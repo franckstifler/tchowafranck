@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc><%= url(~p"/") %></loc>
+  </url>
+  <url>
+    <loc><%= url(~p"/about") %></loc>
+  </url>
+  <url>
+    <loc><%= url(~p"/contact") %></loc>
+  </url>
+<%= for post <- assigns.posts do %>  <url>
+    <loc><%= post_url(post) %></loc>
+    <lastmod><%= w3c_date(post.published_date) %></lastmod>
+<%= for {lang, href} <- alternates(post, assigns.translations) do %>    <xhtml:link rel="alternate" hreflang="<%= lang %>" href="<%= href %>" />
+<% end %>  </url>
+<% end %><%= for tag <- assigns.tags do %>  <url>
+    <loc><%= tag_url(tag) %></loc>
+  </url>
+<% end %></urlset>

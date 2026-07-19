@@ -25,6 +25,11 @@ defmodule BlogWeb.Router do
 
     get "/about", PageController, :about
     get "/contact", PageController, :contact
+
+    get "/feed.xml", FeedController, :index
+    get "/feed/:language", FeedController, :index
+    get "/sitemap.xml", SitemapController, :index
+    get "/robots.txt", SitemapController, :robots
   end
 
   # Other scopes may use custom stacks.

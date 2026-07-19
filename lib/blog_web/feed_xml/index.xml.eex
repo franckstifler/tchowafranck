@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Franck Tchowa — <%= String.upcase(assigns.language) %></title>
+    <link><%= site_url() %></link>
+    <description>Articles by Franck Tchowa (<%= assigns.language %>)</description>
+    <language><%= assigns.language %></language>
+    <atom:link href="<%= feed_url(assigns.language) %>" rel="self" type="application/rss+xml" />
+<%= for post <- assigns.posts do %>    <item>
+      <title><%= xml_escape(post.title) %></title>
+      <link><%= post_url(post) %></link>
+      <guid isPermaLink="true"><%= post_url(post) %></guid>
+      <pubDate><%= rfc822(post.published_date) %></pubDate>
+      <description><![CDATA[<%= excerpt(post.content, post.blurb) %>]]></description>
+    </item>
+<% end %>  </channel>
+</rss>
